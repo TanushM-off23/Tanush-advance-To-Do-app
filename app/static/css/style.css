@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    background: #f9f9f9;
+    border-left: 5px solid #ccc;
+}
+
+.task-item.pending { border-left-color: #f0ad4e; }
+.task-item.working { border-left-color: #5bc0de; }
+.task-item.done    { border-left-color: #4CAF50; }
+
+.status {
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+}
+
+.clear-btn {
+    background: #e74c3c;
+    margin-top: 20px;
+}
+
+.flash {
+    background: #dff0d8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #3c763d;
+}
+
+.logout {
+    display: block;
+    margin-top: 15px;
+    color: #e74c3c;
+    text-decoration: none;
+}
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 350px;
+    margin: 80px auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 5px;
+}
+
+.login-container p {
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container button:hover {
+    background: #45a049;
+}

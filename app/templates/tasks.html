@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Tasks</h1>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Add Task Form -->
+        <form action="/add_task" method="POST">
+            <input type="text" name="title" placeholder="Enter task..." required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Task List -->
+        {% if tasks %}
+            <ul class="task-list">
+                {% for task in tasks %}
+                <li class="task-item {{ task.status | lower | replace('!', '') }}">
+                    <span>{{ task.title }}</span>
+                    <span class="status">{{ task.status }}</span>
+                    <a href="/toggle/{{ task.id }}">Toggle</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No tasks yet. Add one above!</p>
+        {% endif %}
+
+        <!-- Clear All -->
+        <form action="/clear" method="POST">
+            <button type="submit" class="clear-btn">Clear All Tasks</button>
+        </form>
+
+        <!-- Logout -->
+        <a href="{{ url_for('auth.logout') }}" class="logout">Logout</a>
+    </div>
+
+</body>
+</html>
